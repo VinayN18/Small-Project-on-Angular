@@ -1,0 +1,263 @@
+/* html {
+  height: 100%;
+} */
+.body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background: linear-gradient(#141e30, #243b55);
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  /* background: rgba(0, 0, 0, 0.5); */
+  background: rgb(255, 255, 255);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0;
+  font-size: 32px;
+  padding: 0;
+  /* color: #fff; */
+  color: #04aa6d;
+  text-align: center;
+}
+.login-box p {
+  margin: 0 0 32px;
+  font-size: 16px;
+  padding: 0;
+  color: #04aa6d;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  /* color: #fff; */
+  color: #000;
+  margin-bottom: 25px;
+  border: none;
+  /* border-bottom: 1px solid #fff; */
+  border-bottom: 1px solid #000;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  /* color: #fff; */
+  color: #000;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.login-box .user-box input.ng-invalid.ng-touched {
+  border-bottom: 1px solid red;
+}
+
+input[type="date"]:in-range::-webkit-datetime-edit-year-field,
+input[type="date"]:in-range::-webkit-datetime-edit-month-field,
+input[type="date"]:in-range::-webkit-datetime-edit-day-field,
+input[type="date"]:in-range::-webkit-datetime-edit-text {
+  color: transparent;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input.ng-valid ~ label {
+  /* .login-box .user-box input.ng-valid.ng-touched ~label { */
+  top: -28px;
+  left: 0;
+  /* color: #03e9f4; */
+  color: #04aa6d;
+  font-size: 16px;
+}
+
+.btn {
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 5px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 17px;
+  /* background: #03e9f4; */
+  background: #04aa6d;
+  padding: 8px 15px 8px 15px;
+  border: solid #2ab142 2px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  /* background: #085280; */
+  color: #000;
+  background: rgba(41, 245, 9, 0.1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  position: absolute;
+  right: 1.22%;
+  background: rgba(41, 245, 9, 0.1);
+  background-image: -webkit-linear-gradient(top, #a8e890, #04aa6d);
+  background-image: -moz-linear-gradient(top, #a8e890, #04aa6d);
+  background-image: -ms-linear-gradient(top, #a8e890, #04aa6d);
+  background-image: -o-linear-gradient(top, #a8e890, #04aa6d);
+  background-image: linear-gradient(to bottom, #a8e890, #04aa6d);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 10px;
+  text-shadow: 1px 0px 0px #666666;
+  -webkit-box-shadow: 1px 1px 3px #666666;
+  -moz-box-shadow: 1px 1px 3px #666666;
+  box-shadow: 1px 1px 3px #666666;
+  font-family: Georgia;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #58ae42 2px;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  cursor: pointer;
+  color: rgb(0, 0, 0, 0.1);
+  /* background: #aedbf5; */
+  background: rgba(41, 245, 9, 0.1);
+  /* background-image: -webkit-linear-gradient(top, #aedbf5, #0a68a6);
+  background-image: -moz-linear-gradient(top, #aedbf5, #0a68a6);
+  background-image: -ms-linear-gradient(top, #aedbf5, #0a68a6);
+  background-image: -o-linear-gradient(top, #aedbf5, #0a68a6);
+  background-image: linear-gradient(to bottom, #aedbf5, #0a68a6); */
+  text-decoration: none;
+}
+
+.help-block {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #fff;
+  padding-bottom: 25px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 50;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  /* background-color: white; */
+  /* padding: 6rem; */
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.table {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tableHead {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}
+
+.tableHead,
+.tableData {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.data-box {
+  /* position: fixed;
+  top: 30vh;
+  left: 20vw;
+  width: 60vw;
+  padding: 16px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26); */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  /* background: rgba(0, 0, 0, 0.5); */
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  z-index: 100;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.data-box-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.data-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  /* color: #03e9f4; */
+  color: #04aa6d;
+  text-align: center;
+  border-bottom: 1px solid #000;
+}
+.data-box p {
+  /* color: #fff; */
+  color: #000;
+  font-size: 20px;
+}
+
+.invalid-feedback {
+  color: red;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+}
+
+.noProject {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: large;
+  position: absolute;
+}
