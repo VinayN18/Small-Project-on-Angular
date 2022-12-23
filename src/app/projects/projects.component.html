@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div
+      class="backdrop"
+      [ngStyle]="{ display: displayStyle }"
+      (click)="onClose()"
+    ></div>
+    <button class="btn-primary" (click)="onOpen()">Add Project</button>
+    <div class="modal" [ngStyle]="{ display: displayStyle }">
+      <div class="login-box alert-box">
+        <h2>Awesome</h2>
+        <p>Just One more Step to Add your Project!</p>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+          <!-- <div ngModelGroup="userData"></div> -->
+
+          <div class="user-box form-group">
+            <input
+              type="text"
+              id="Name"
+              class="form-control Name"
+              formControlName="Name"
+            />
+            <label>Project Name</label>
+          </div>
+          <div
+            *ngIf="
+              !signupForm.get('Name')?.valid && signupForm.get('Name')?.touched
+            "
+            class="invalid-feedback span"
+          >
+            Please enter a Project Name!
+          </div>
+          <br />
+          <div class="user-box form-group">
+            <input
+              type="number"
+              id="Id"
+              class="form-control Id"
+              formControlName="Id"
+            />
+            <label>Project Id</label>
+          </div>
+          <div
+            *ngIf="
+              !signupForm.get('Id')?.valid && signupForm.get('Id')?.touched
+            "
+            class="invalid-feedback span"
+          >
+            Please enter a valid Project Id!
+          </div>
+          <br />
+          <div class="user-box form-group">
+            <input
+              type="textarea"
+              id="Description"
+              class="form-control Description"
+              formControlName="Description"
+            />
+            <label>Project Description</label>
+          </div>
+          <div
+            *ngIf="
+              !signupForm.get('Description')?.valid &&
+              signupForm.get('Description')?.touched
+            "
+            class="invalid-feedback span"
+          >
+            Please enter a Project Description!
+          </div>
+          <br />
+          <div class="user-box">
+            <input
+              type="date"
+              id="Date"
+              class="form-control Date"
+              formControlName="Date"
+            />
+            <label>Project Deadline</label>
+          </div>
+          <div
+            *ngIf="
+              !signupForm.get('Date')?.valid && signupForm.get('Date')?.touched
+            "
+            class="invalid-feedback span"
+          >
+            Please enter a Project Date!
+          </div>
+          <br />
+          <button
+            type="submit"
+            class="btn"
+            [disabled]="!signupForm.valid"
+            (click)="onClick()"
+          >
+            Add Project
+          </button>
+        </form>
+        <br /><br />
+      </div>
+    </div>
+    <div>
+      <h1>Projects</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="tableHead">Project Name</th>
+            <th class="tableHead">Project Id</th>
+            <th class="tableHead">Project Description</th>
+            <th class="tableHead">Project Deadline</th>
+          </tr>
+        </thead>
+        <div class="noProject" *ngIf="formData.length === 0">
+          <p>You have not added any projects!!</p>
+          <p>Add a new project by clicking on the Add Project button</p>
+        </div>
+        <tbody>
+          <tr *ngFor="let user of formData" (click)="onRowClick(user)">
+            <td class="tableData">{{ user.Name }}</td>
+            <td class="tableData">{{ user.Id }}</td>
+            <td class="tableData">{{ user.Description }}</td>
+            <td class="tableData">{{ user.Date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="backdrop"
+      [ngStyle]="{ display: displayStyle1 }"
+      (click)="onDataClose()"
+    ></div>
+    <div class="data-box" [ngStyle]="{ display: displayStyle1 }">
+      <h2>Project Details</h2>
+      <p>Project Name: {{ details.name }}</p>
+      <p>Project Id: {{ details.id }}</p>
+      <p>Project Description: {{ details.description }}</p>
+      <p>Project Date: {{ details.date }}</p>
+      <div class="data-box-actions">
+        <button class="btn" (click)="onDataClose()">Close</button>
+        <button class="btn" (click)="onDelete(details)">Delete Project</button>
+      </div>
+    </div>
+  </body>
+</html>

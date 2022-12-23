@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div
+      class="backdrop"
+      [ngStyle]="{ display: displayStyle }"
+      (click)="onClose()"
+    ></div>
+    <button class="btn-primary" (click)="onOpen()">Add Person</button>
+    <div class="modal" [ngStyle]="{ display: displayStyle }">
+      <div class="login-box alert-box">
+        <h2>Awesome</h2>
+        <p>Just One more Step to Add a Person!</p>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+          <!-- <div ngModelGroup="userData"></div> -->
+
+          <div class="user-box form-group">
+            <input
+              type="text"
+              id="Name"
+              class="form-control Name"
+              formControlName="Name"
+            />
+            <label>Name</label>
+          </div>
+          <div
+            *ngIf="
+              !signupForm.get('Name')?.valid && signupForm.get('Name')?.touched
+            "
+            class="invalid-feedback span"
+          >
+            Please enter a Name!
+          </div>
+          <br />
+          <div class="user-box form-group">
+            <input
+              type="text"
+              id="Email"
+              class="form-control Email"
+              formControlName="Email"
+            />
+            <label>Email</label>
+          </div>
+          <div
+            *ngIf="
+              !signupForm.get('Email')?.valid &&
+              signupForm.get('Email')?.touched
+            "
+            class="invalid-feedback span"
+          >
+            Please enter a valid Email!
+          </div>
+          <br />
+          <div class="user-box form-group">
+            <input
+              type="number"
+              id="Mobile"
+              class="form-control Mobile"
+              formControlName="Mobile"
+            />
+            <label>Mobile No</label>
+          </div>
+          <div
+            *ngIf="
+              !signupForm.get('Mobile')?.valid &&
+              signupForm.get('Mobile')?.touched
+            "
+            class="invalid-feedback span"
+          >
+            Please enter your 10-digit Mobile Number!
+          </div>
+          <br />
+          <div class="user-box">
+            <input
+              type="date"
+              id="Date"
+              class="form-control Date"
+              formControlName="Date"
+            />
+            <label>BirthDate</label>
+          </div>
+          <div
+            *ngIf="
+              !signupForm.get('Date')?.valid && signupForm.get('Date')?.touched
+            "
+            class="invalid-feedback span"
+          >
+            Please enter a Birthdate!
+          </div>
+          <br />
+          <div class="user-box form-group">
+            <span class="radio">
+              <span>Male</span>
+              <input type="radio" value="Male" formControlName="Gender" />
+            </span>
+            <span class="radio">
+              <span>Female</span>
+              <input type="radio" value="Female" formControlName="Gender" />
+            </span>
+            <span class="radio">
+              <span>Other</span>
+              <input type="radio" value="Other" formControlName="Gender" />
+            </span>
+          </div>
+          <div
+            *ngIf="
+              !signupForm.get('Gender')?.valid &&
+              signupForm.get('Gender')?.touched
+            "
+            class="invalid-feedback span"
+          >
+            Please select your Gender!
+          </div>
+          <br />
+
+          <button
+            type="submit"
+            class="btn"
+            [disabled]="!signupForm.valid"
+            (click)="onClick()"
+          >
+            Add Person
+          </button>
+        </form>
+        <br /><br />
+      </div>
+    </div>
+    <div>
+      <h1>Persons List</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="tableHead">Name</th>
+            <th class="tableHead">Email</th>
+            <th class="tableHead">Mobile</th>
+            <th class="tableHead">BirthDate</th>
+            <th class="tableHead">Gender</th>
+          </tr>
+        </thead>
+        <div class="noProject" *ngIf="formData.length === 0">
+          <p>You have not added any Person details!!</p>
+          <p>Add a new person details by clicking on the Add Person button</p>
+        </div>
+        <tbody>
+          <tr *ngFor="let user of formData" (click)="onRowClick(user)">
+            <td class="tableData">{{ user.Name }}</td>
+            <td class="tableData">{{ user.Email }}</td>
+            <td class="tableData">{{ user.Mobile }}</td>
+            <td class="tableData">{{ user.Date }}</td>
+            <td class="tableData">{{ user.Gender }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="backdrop"
+      [ngStyle]="{ display: displayStyle1 }"
+      (click)="onDataClose()"
+    ></div>
+    <div class="data-box" [ngStyle]="{ display: displayStyle1 }">
+      <h2>Person Details</h2>
+      <p>Name: {{ details.name }}</p>
+      <p>Email: {{ details.email }}</p>
+      <p>Mobile: {{ details.mobile }}</p>
+      <p>BirthDate: {{ details.date }}</p>
+      <p>Gender: {{ details.gender }}</p>
+      <div class="data-box-actions">
+        <button class="btn" (click)="onDataClose()">Close</button>
+        <button class="btn" (click)="onDelete(details)">Delete Person</button>
+      </div>
+    </div>
+  </body>
+</html>

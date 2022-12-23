@@ -165,4 +165,13 @@ export class AppComponent implements OnInit {
     this.details.date = user.Date;
     this.details.idee = user.id;
   }
+  // myFunction() {
+  //   var x = document.getElementById('myTopnav');
+  //   if (x?.className === 'topnav') {
+  //     x.className += ' responsive';
+  //   }
+  //   else {
+  //     x.className = "topnav";
+  //   }
+  // }
 }

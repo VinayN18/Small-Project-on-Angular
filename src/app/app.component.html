@@ -164,12 +164,17 @@
   </body>
 </html> -->
 
+<!--
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <div
@@ -177,14 +182,21 @@
       [ngStyle]="{ display: displayStyle }"
       (click)="onClose()"
     ></div>
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active">Home</a>
+      <a href="#news">Projects</a>
+      <a href="#contact">Members</a>
 
+       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a> 
+    </div>
     <button class="btn-primary" (click)="onOpen()">Add Project</button>
     <div class="modal" [ngStyle]="{ display: displayStyle }">
       <div class="login-box alert-box">
         <h2>Awesome</h2>
         <p>Just One more Step to Add your Project!</p>
         <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-          <!-- <div ngModelGroup="userData"></div> -->
 
           <div class="user-box form-group">
             <input
@@ -310,3 +322,35 @@
     </div>
   </body>
 </html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active">Home</a>
+      <a href="#news">Projects</a>
+      <a href="#contact">Persons</a>
+
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </body>
+</html>
+
+<app-projects></app-projects>
+<br />
+<br />
+<br />
+<br />
+<app-members></app-members>
