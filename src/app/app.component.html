@@ -337,9 +337,14 @@
   </head>
   <body>
     <div class="topnav" id="myTopnav">
-      <a href="#home" class="active">Home</a>
-      <a href="#news">Projects</a>
-      <a href="#contact">Persons</a>
+      <a
+        routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+      <a routerLink="projects" routerLinkActive="active">Projects</a>
+      <a routerLink="persons" routerLinkActive="active">Persons</a>
 
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
@@ -348,9 +353,10 @@
   </body>
 </html>
 
-<app-projects></app-projects>
+<router-outlet></router-outlet>
+<!-- <app-projects></app-projects>
 <br />
 <br />
 <br />
 <br />
-<app-members></app-members>
+<app-members></app-members> -->

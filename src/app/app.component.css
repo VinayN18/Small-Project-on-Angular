@@ -1,7 +1,4 @@
-/* html {
-  height: 100%;
-} */
-.body {
+/* .body {
   margin: 0;
   padding: 0;
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -15,7 +12,6 @@
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  /* background: rgba(0, 0, 0, 0.5); */
   background: rgb(255, 255, 255);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
@@ -26,7 +22,6 @@
   margin: 0 0;
   font-size: 32px;
   padding: 0;
-  /* color: #fff; */
   color: #04aa6d;
   text-align: center;
 }
@@ -47,11 +42,9 @@
   padding: 10px 0;
   font-size: 16px;
   font-family: Georgia, "Times New Roman", Times, serif;
-  /* color: #fff; */
   color: #000;
   margin-bottom: 25px;
   border: none;
-  /* border-bottom: 1px solid #fff; */
   border-bottom: 1px solid #000;
   outline: none;
   background: transparent;
@@ -63,7 +56,6 @@
   padding: 10px 0;
   font-size: 16px;
   font-family: Georgia, "Times New Roman", Times, serif;
-  /* color: #fff; */
   color: #000;
   pointer-events: none;
   transition: 0.5s;
@@ -82,10 +74,8 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
 
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input.ng-valid ~ label {
-  /* .login-box .user-box input.ng-valid.ng-touched ~label { */
   top: -28px;
   left: 0;
-  /* color: #03e9f4; */
   color: #04aa6d;
   font-size: 16px;
 }
@@ -97,7 +87,6 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
   font-family: Georgia;
   color: #ffffff;
   font-size: 17px;
-  /* background: #03e9f4; */
   background: #04aa6d;
   padding: 8px 15px 8px 15px;
   border: solid #2ab142 2px;
@@ -105,7 +94,6 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
 }
 
 .btn:hover {
-  /* background: #085280; */
   color: #000;
   background: rgba(41, 245, 9, 0.1);
   text-decoration: none;
@@ -139,13 +127,7 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
 .btn-primary:hover {
   cursor: pointer;
   color: rgb(0, 0, 0, 0.1);
-  /* background: #aedbf5; */
   background: rgba(41, 245, 9, 0.1);
-  /* background-image: -webkit-linear-gradient(top, #aedbf5, #0a68a6);
-  background-image: -moz-linear-gradient(top, #aedbf5, #0a68a6);
-  background-image: -ms-linear-gradient(top, #aedbf5, #0a68a6);
-  background-image: -o-linear-gradient(top, #aedbf5, #0a68a6);
-  background-image: linear-gradient(to bottom, #aedbf5, #0a68a6); */
   text-decoration: none;
 }
 
@@ -171,9 +153,6 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
-
-  /* background-color: white; */
-  /* padding: 6rem; */
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 100;
@@ -209,20 +188,13 @@ tbody tr:nth-child(even) {
 }
 
 .data-box {
-  /* position: fixed;
-  top: 30vh;
-  left: 20vw;
-  width: 60vw;
-  padding: 16px;
-  background-color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26); */
   position: absolute;
   top: 50%;
   left: 50%;
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  /* background: rgba(0, 0, 0, 0.5); */
+  
   background: #fff;
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
@@ -239,13 +211,13 @@ tbody tr:nth-child(even) {
 .data-box h2 {
   margin: 0 0 30px;
   padding: 0;
-  /* color: #03e9f4; */
+  
   color: #04aa6d;
   text-align: center;
   border-bottom: 1px solid #000;
 }
 .data-box p {
-  /* color: #fff; */
+  
   color: #000;
   font-size: 20px;
 }
@@ -260,7 +232,7 @@ tbody tr:nth-child(even) {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: large;
   position: absolute;
-}
+} */
 
 /*Navbar*/
 .topnav {
