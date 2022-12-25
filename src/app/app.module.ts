@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'projects', component: ProjectsComponent },
-  { path: 'persons', component: MembersComponent },
+  { path: 'members', component: MembersComponent },
 ];
 @NgModule({
   declarations: [

@@ -23,8 +23,8 @@
 }
 
 .login-box h2 {
-  margin: 0 0;
-  font-size: 32px;
+  margin: 0 0 32px;
+  font-size: 28px;
   padding: 0;
   /* color: #fff; */
   color: #04aa6d;
@@ -38,6 +38,18 @@
   text-align: center;
 }
 
+.ionicon {
+  font-size: 128px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.form-top {
+  display: flex;
+  justify-content: space-between;
+}
+
 .login-box .user-box {
   position: relative;
 }
@@ -49,7 +61,7 @@
   font-family: Georgia, "Times New Roman", Times, serif;
   /* color: #fff; */
   color: #000;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   border: none;
   /* border-bottom: 1px solid #fff; */
   border-bottom: 1px solid #000;
@@ -153,6 +165,12 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #fff;
   padding-bottom: 25px;
+}
+
+.center {
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
 .backdrop {
@@ -260,8 +278,4 @@ tbody tr:nth-child(even) {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: large;
   position: absolute;
-}
-
-.radio {
-  display: flex;
 }

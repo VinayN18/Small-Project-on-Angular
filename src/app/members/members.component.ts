@@ -21,7 +21,9 @@ export class MembersComponent implements OnInit {
     email: 'string',
     mobile: 'string',
     date: 'string',
-    gender: 'string',
+    city: 'string',
+    state: 'string',
+    country: 'string',
   };
 
   ngOnInit() {
@@ -33,7 +35,18 @@ export class MembersComponent implements OnInit {
         Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'),
       ]),
       Date: new FormControl(null, Validators.required),
-      Gender: new FormControl(null, Validators.required),
+      City: new FormControl(null, [
+        Validators.required,
+        Validators.maxLength(32),
+      ]),
+      State: new FormControl(null, [
+        Validators.required,
+        Validators.maxLength(20),
+      ]),
+      Country: new FormControl(null, [
+        Validators.required,
+        Validators.maxLength(20),
+      ]),
     });
   }
   onClick() {
@@ -86,7 +99,9 @@ export class MembersComponent implements OnInit {
     this.details.email = user.Email;
     this.details.mobile = user.Mobile;
     this.details.date = user.Date;
-    this.details.gender = user.Gender;
+    this.details.city = user.City;
+    this.details.state = user.State;
+    this.details.country = user.country;
     this.details.id = user.id;
   }
 }

@@ -10,16 +10,29 @@
     />
   </head>
   <body>
-    <div
-      class="backdrop"
-      [ngStyle]="{ display: displayStyle }"
-      (click)="onClose()"
-    ></div>
+    <div class="backdrop" [ngStyle]="{ display: displayStyle }"></div>
     <button class="btn-primary" (click)="onOpen()">Add Project</button>
     <div class="modal" [ngStyle]="{ display: displayStyle }">
       <div class="login-box alert-box">
-        <h2>Awesome</h2>
-        <p>Just One more Step to Add your Project!</p>
+        <div class="form-top">
+          <h2>Fill the Details</h2>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="ionicon"
+            viewBox="0 0 512 512"
+            (click)="onClose()"
+          >
+            <title>Close</title>
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="32"
+              d="M368 368L144 144M368 144L144 368"
+            />
+          </svg>
+        </div>
         <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
           <!-- <div ngModelGroup="userData"></div> -->
 
@@ -96,16 +109,18 @@
             Please enter a Project Date!
           </div>
           <br />
-          <button
-            type="submit"
-            class="btn"
-            [disabled]="!signupForm.valid"
-            (click)="onClick()"
-          >
-            Add Project
-          </button>
+          <div class="center">
+            <button
+              type="submit"
+              class="btn"
+              [disabled]="!signupForm.valid"
+              (click)="onClick()"
+            >
+              Add Project
+            </button>
+          </div>
         </form>
-        <br /><br />
+        <br />
       </div>
     </div>
     <div>
