@@ -108,7 +108,7 @@
           >
             Please enter a Project Date!
           </div>
-          <br />
+          <br /><br />
           <div class="center">
             <button
               type="submit"
@@ -135,10 +135,12 @@
             <th class="tableHead">Project Deadline</th>
           </tr>
         </thead>
+        <!-- <div class="table-border" *ngIf="formData.length === 0"> -->
         <div class="noProject" *ngIf="formData.length === 0">
           <p>You have not added any projects!!</p>
           <p>Add a new project by clicking on the Add Project button</p>
         </div>
+        <!-- </div> -->
         <tbody>
           <tr *ngFor="let user of formData" (click)="onRowClick(user)">
             <td class="tableData">{{ user.Name }}</td>
