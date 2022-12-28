@@ -235,34 +235,46 @@ tbody tr:nth-child(even) {
 } */
 
 /*Navbar*/
+
 .topnav {
   overflow: hidden;
-  background-color: #fff;
+  background-color: #f4eeff;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .topnav a {
-  float: left;
-  display: block;
-  color: #000;
+  /* float: left; */
+  /* display: block; */
+  color: #424874;
   text-align: center;
-  padding: 14px 16px;
+  padding: 20px 20px 20px 20px;
   text-decoration: none;
   font-size: 17px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: #dcd6f7;
+  font-size: 16px;
+  padding: 18px;
+  margin: 4px;
+  color: #424874;
 }
 
 .topnav a.active {
-  background-color: #04aa6d;
-  color: white;
+  background-color: #a6b1e1;
+  color: #1e2235;
+  padding: 18px 18px;
+  margin: 4px;
+  border: 1px solid #424874;
 }
 
 .topnav .icon {
   display: none;
-  color: #04aa6d;
+  color: #424874;
 }
 
 @media screen and (max-width: 600px) {

@@ -15,7 +15,7 @@
     <div class="modal" [ngStyle]="{ display: displayStyle }">
       <div class="login-box alert-box">
         <div class="form-top">
-          <h2>Fill the Details</h2>
+          <h2>{{ fillEdit }} Details</h2>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="ionicon"
@@ -116,8 +116,13 @@
               [disabled]="!signupForm.valid"
               (click)="onClick()"
             >
-              Add Project
+              {{ addEdit }}
             </button>
+            <!-- <div *ngIf="addEdit === 'Edit Project'">
+              <button class="btn" (click)="onDelete(details)">
+                Delete Project
+              </button>
+            </div> -->
           </div>
         </form>
         <br />

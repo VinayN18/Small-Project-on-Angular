@@ -101,7 +101,7 @@ export class MembersComponent implements OnInit {
     this.details.date = user.Date;
     this.details.city = user.City;
     this.details.state = user.State;
-    this.details.country = user.country;
+    this.details.country = user.Country;
     this.details.id = user.id;
   }
 }

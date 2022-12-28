@@ -10,14 +10,16 @@ export class ProjectsComponent implements OnInit {
   signupForm: FormGroup;
   displayStyle = 'none';
   displayStyle1 = 'none';
+  fillEdit = 'Fill the';
+  addEdit = 'Add Project';
   editRecordId = null;
   submitted = false;
   clicked = false;
   formData: any[] = [];
 
   details = {
-    name: 'string',
     idee: 'string',
+    name: 'string',
     id: 'string',
     description: 'string',
     date: 'string',
@@ -44,7 +46,7 @@ export class ProjectsComponent implements OnInit {
       this.formData = this.formData.map((data) =>
         data.id === this.editRecordId ? this.signupForm.value : data
       );
-      this.editRecordId = null;
+      // this.editRecordId = this.editRecordId;
     } else {
       const id = Date.now();
       const data = {
@@ -63,6 +65,9 @@ export class ProjectsComponent implements OnInit {
   }
   onOpen() {
     this.displayStyle = 'block';
+    this.fillEdit = 'Fill the';
+    this.addEdit = 'Add Project';
+    // this.signupForm.reset();
   }
   // onEdit(user) {
   //   this.displayStyle = 'block';
@@ -85,5 +90,11 @@ export class ProjectsComponent implements OnInit {
     this.details.description = user.Description;
     this.details.date = user.Date;
     this.details.idee = user.id;
+    // this.fillEdit = 'Edit your';
+    // this.addEdit = 'Edit Project';
+    // this.displayStyle = 'block';
+    // const { id, ...data } = user;
+    // this.editRecordId = id;
+    // this.signupForm.setValue(data);
   }
 }
