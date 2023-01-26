@@ -218,12 +218,12 @@
             <th class="tableHead">Country</th>
           </tr>
         </thead>
-        <div class="noProject" *ngIf="formData.length === 0">
+        <div class="noProject" *ngIf="formDataMembers.length === 0">
           <p>You have not added any Member details!!</p>
           <p>Add a new member details by clicking on the Add Member button</p>
         </div>
         <tbody>
-          <tr *ngFor="let user of formData" (click)="onRowClick(user)">
+          <tr *ngFor="let user of formDataMembers" (click)="onRowClick(user)">
             <td class="tableData">{{ user.Name }}</td>
             <td class="tableData">{{ user.Email }}</td>
             <td class="tableData">{{ user.Mobile }}</td>

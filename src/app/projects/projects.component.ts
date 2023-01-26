@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { DataServiceService } from '../data-service.service';
+
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -16,6 +18,28 @@ export class ProjectsComponent implements OnInit {
   submitted = false;
   clicked = false;
   formData: any[] = [];
+  // get formDataMembers(): {
+  //   id: string;
+  //   Name: string;
+  //   Email: string;
+  //   Mobile: string;
+  //   Date: string;
+  //   City: string;
+  //   State: string;
+  //   Country: string;
+  // }[] {
+  //   return this.dataService.formDataMembers;
+  // }
+  formDataMembers: {
+    id: string;
+    Name: string;
+    Email: string;
+    Mobile: string;
+    Date: string;
+    City: string;
+    State: string;
+    Country: string;
+  }[] = [];
 
   details = {
     idee: 'string',
@@ -24,8 +48,10 @@ export class ProjectsComponent implements OnInit {
     description: 'string',
     date: 'string',
   };
+  constructor(private dataService: DataServiceService) {}
 
   ngOnInit() {
+    this.formDataMembers = this.dataService.formDataMembers;
     this.signupForm = new FormGroup({
       Name: new FormControl(null, Validators.required),
       Id: new FormControl(null, [
@@ -40,7 +66,7 @@ export class ProjectsComponent implements OnInit {
     this.displayStyle = 'none';
   }
   onSubmit() {
-    // console.log(this.signupForm.value);
+    // console.log(this.formDataMembers);
     this.submitted = true;
     if (this.editRecordId) {
       this.formData = this.formData.map((data) =>

@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { DataServiceService } from '../data-service.service';
+
 @Component({
   selector: 'app-members',
   templateUrl: './members.component.html',
   styleUrls: ['./members.component.css'],
+  providers: [],
 })
 export class MembersComponent implements OnInit {
   signupForm: FormGroup;
@@ -13,8 +16,17 @@ export class MembersComponent implements OnInit {
   editRecordId = null;
   submitted = false;
   clicked = false;
-  formData: any[] = [];
-  // genders = ['Male', 'Female', 'Other'];
+  formDataMembers: {
+    id: string;
+    Name: string;
+    Email: string;
+    Mobile: string;
+    Date: string;
+    City: string;
+    State: string;
+    Country: string;
+  }[] = [];
+
   details = {
     name: 'string',
     id: 'string',
@@ -26,7 +38,11 @@ export class MembersComponent implements OnInit {
     country: 'string',
   };
 
+  constructor(private dataService: DataServiceService) {}
+
   ngOnInit() {
+    this.formDataMembers = this.dataService.formDataMembers;
+
     this.signupForm = new FormGroup({
       Name: new FormControl(null, Validators.required),
       Email: new FormControl(null, [Validators.required, Validators.email]),
@@ -53,11 +69,10 @@ export class MembersComponent implements OnInit {
     this.displayStyle = 'none';
   }
   onSubmit() {
-    // console.log(this.signupForm.value);
     this.submitted = true;
     if (this.editRecordId) {
-      this.formData = this.formData.map((data) =>
-        data.id === this.editRecordId ? this.signupForm.value : data
+      this.dataService.formDataMembers = this.dataService.formDataMembers.map(
+        (data) => (data.id === this.editRecordId ? this.signupForm.value : data)
       );
       this.editRecordId = null;
     } else {
@@ -66,7 +81,8 @@ export class MembersComponent implements OnInit {
         id,
         ...this.signupForm.value,
       };
-      this.formData.push(data);
+      // this.formDataMembers.push(data);
+      this.dataService.formDataMembers.push(data);
     }
     this.signupForm.reset();
   }
@@ -90,7 +106,9 @@ export class MembersComponent implements OnInit {
     this.displayStyle1 = 'none';
   }
   onDelete(user) {
-    this.formData = this.formData.filter((data) => data.id !== user.id);
+    this.dataService.formDataMembers = this.dataService.formDataMembers.filter(
+      (data) => data.id !== user.id
+    );
     this.displayStyle1 = 'none';
   }
   onRowClick(user) {
